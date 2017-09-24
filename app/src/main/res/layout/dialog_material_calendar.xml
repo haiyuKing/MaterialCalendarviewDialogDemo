@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:gravity="center">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="@dimen/material_calendar_dialog_margin"
+        android:background="#ffffff">
+
+        <!-- 展现选中的日期区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/material_calendar_dialog_paddingTB"
+            android:paddingBottom="@dimen/material_calendar_dialog_paddingTB"
+            android:paddingLeft="@dimen/material_calendar_dialog_paddingLR"
+            android:paddingRight="@dimen/material_calendar_dialog_paddingLR"
+            android:background="@color/materialcalendar_selected_color">
+
+            <!-- 年份 -->
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017年"
+                android:textSize="@dimen/material_calendar_dialog_year_textsize"
+                android:textColor="#ffffff"
+                />
+
+            <!-- 月日星期 -->
+            <TextView
+                android:id="@+id/tv_monthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9月24日  周日"
+                android:textSize="@dimen/material_calendar_dialog_monthday_textsize"
+                android:textColor="#ffffff"
+                />
+        </LinearLayout>
+
+        <!-- 日历控件 -->
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/calendarView"
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dp"
+            android:layout_weight="1"
+            app:mcv_showOtherDates="all"
+            />
+
+        <!-- 底部按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right|center_vertical"
+            android:padding="@dimen/material_calendar_dialog_paddingTB">
+
+            <!-- 取消 -->
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="取消"
+                android:textSize="18sp"
+                android:textColor="@color/materialcalendar_selected_color"
+                android:paddingRight="@dimen/material_calendar_dialog_paddingLR"/>
+
+            <!-- 确定 -->
+            <TextView
+                android:id="@+id/tv_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确定"
+                android:textSize="18sp"
+                android:textColor="@color/materialcalendar_selected_color"
+                android:paddingLeft="@dimen/material_calendar_dialog_paddingTB"
+                android:paddingRight="@dimen/material_calendar_dialog_paddingTB"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

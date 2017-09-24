@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.why.project.materialcalendarviewdialogdemo.MainActivity">
+
+    <!-- 起始日期 -->
+    <EditText
+        android:id="@+id/edt_starttime"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:background="#E7E7E7"
+        android:inputType="text"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="起始日期"
+        android:textColor="#191919"
+        android:textColorHint="#959595"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:drawableRight="@drawable/icon_date"
+        android:drawablePadding="5dp"
+        android:layout_margin="10dp"
+        android:padding="8dp"
+        />
+
+</LinearLayout>
