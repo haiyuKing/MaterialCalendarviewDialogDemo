@@ -10,7 +10,6 @@
     <dimen name="material_calendar_dialog_paddingTB">15dp</dimen>
     <!-- 对话框控件的内边距（左右） -->
     <dimen name="material_calendar_dialog_paddingLR">20dp</dimen>
-
     <!-- 对话框控件的年份文本大小 -->
     <dimen name="material_calendar_dialog_year_textsize">18sp</dimen>
     <!-- 对话框控件的月日星期文本大小 -->

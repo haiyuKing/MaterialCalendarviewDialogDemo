@@ -7,7 +7,7 @@
 
     <!-- ==================Material样式日历对话框================== -->
     <!-- 选中日期的背景颜色值 -->
-    <color name="materialcalendar_selected_color">#476BF0</color>
+    <color name="materialcalendar_selected_color">#1A78EC</color>
     <!-- 当天日期的边框的背景颜色值 -->
     <color name="materialcalendar_today_border_color">#FF4081</color>
 

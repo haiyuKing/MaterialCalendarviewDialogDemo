@@ -23,11 +23,11 @@ import com.why.project.materialcalendarviewdialogdemo.R;
 import com.why.project.materialcalendarviewdialogdemo.dialog.materialcalendar.decorators.MySelectorBgDecorator;
 import com.why.project.materialcalendarviewdialogdemo.dialog.materialcalendar.decorators.SelectedDayDecorator;
 import com.why.project.materialcalendarviewdialogdemo.dialog.materialcalendar.decorators.TodayDecorator;
+import com.why.project.materialcalendarviewdialogdemo.utils.DateTimeHelper;
 
+import java.text.ParseException;
 import java.util.Calendar;
 import java.util.Date;
-
-import static com.why.project.materialcalendarviewdialogdemo.R.id.calendarView;
 
 /**
  * Created by HaiyuKing
@@ -37,7 +37,7 @@ import static com.why.project.materialcalendarviewdialogdemo.R.id.calendarView;
 
 public class MaterialCalendarDialog extends DialogFragment {
 
-	private static final String TAG = "MaterialCalendarDialog";
+	private static final String TAG = MaterialCalendarDialog.class.getSimpleName();
 	/**View实例*/
 	private View myView;
 	/**context实例*/
@@ -136,7 +136,7 @@ public class MaterialCalendarDialog extends DialogFragment {
 	private void initView() {
 		mYear = (TextView) myView.findViewById(R.id.tv_year);
 		mMonthDay = (TextView) myView.findViewById(R.id.tv_monthday);
-		mCalendarView = (MaterialCalendarView) myView.findViewById(calendarView);
+		mCalendarView = (MaterialCalendarView) myView.findViewById(R.id.calendarView);
 		mCancleBtn = (TextView) myView.findViewById(R.id.tv_cancel);
 		mOkBtn = (TextView) myView.findViewById(R.id.tv_ok);
 	}
@@ -149,6 +149,16 @@ public class MaterialCalendarDialog extends DialogFragment {
 
 		mCalendarView.setSelectedDate(selectedDate);//设置选中的日期
 		mCalendarView.setCurrentDate(selectedDate);//实现定位到选中日期的当月
+		mCalendarView.setArrowColor(Color.parseColor("#1A78EC"));//设置切换月份的箭头的颜色值【没有起作用】
+
+		//设置最小和最大日期
+		try {
+			Date minDate = DateTimeHelper.parseStringToDate("1970-01-01");
+			mCalendarView.state().edit().setMinimumDate(minDate).commit();
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		mCalendarView.state().edit().setMaximumDate(Calendar.getInstance()).commit();
 
 		mCalendarView.addDecorators(new MySelectorBgDecorator(mContext),
 				selectedDayDecorator,
